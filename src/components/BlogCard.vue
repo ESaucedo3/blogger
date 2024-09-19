@@ -20,7 +20,7 @@ function setActiveBlog() {
         <img :src="blogProp.creator.picture" alt="" class="creator-img">
         <p class="mb-0 ms-2">{{ blogProp.creator.name }}</p>
       </div>
-      <div class="d-flex flex-column" @click="setActiveBlog()" role="button">
+      <div class="d-flex flex-column" @click="setActiveBlog()" role="button" data-bs-toggle="modal" data-bs-target="#blogModal">
         <h5>{{ blogProp.title }}</h5>
         <p class="body-text">
           {{ blogProp.body.substring(0, 200) }}...
