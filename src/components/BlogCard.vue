@@ -17,7 +17,11 @@ function setActiveBlog() {
   <div class="border border-2 border-dark rounded box-shadow p-2 d-flex justify-content-between">
     <div class="d-flex flex-column">
       <div class="d-flex g-1 align-items-center">
-        <img :src="blogProp.creator.picture" alt="" class="creator-img">
+        <router-link :to="{ name: 'User', params: { userId: blogProp.creatorId } }"
+          class="btn text-success lighten-30 selectable text-uppercase"
+          :title="`Go to ${blogProp.creator.name}'s Profiles Page'`">
+          <img :src="blogProp.creator.picture" alt="" class="creator-img">
+        </router-link>
         <p class="mb-0 ms-2">{{ blogProp.creator.name }}</p>
       </div>
       <div class="d-flex flex-column justify-content-between flex-grow-1" @click="setActiveBlog()" role="button"
